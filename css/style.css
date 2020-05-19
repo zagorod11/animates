@@ -1,0 +1,145 @@
+ body{
+	margin-left:40px;
+	background-color: #5168C4;
+}
+h1,h2{
+	text-align:center;
+	color: #c4c4c4;
+}
+/*---Масштабування фото---*/
+.inline-img img{
+	width: 300px;
+	display: inline-block;
+	border-radius: 15px;
+	text-align: center;
+	transform: scale(0.75);
+	transition: 2s;
+	max-width: 35%;
+}
+.inline-img img:hover{
+	transform: scale(1.3);
+    cursor:pointer;
+}
+/*---Квадрат коливається та змінює колір---*/
+.square{
+	width: 200px;
+	height: 200px;
+	margin: 30px auto;
+	background-color: #123456;
+	animation-name: spin;
+	animation-duration: 4s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction:alternate;
+	float: left;
+}
+@keyframes spin{
+	0%{transform: rotate(0deg);}
+	25%{background-color: #E63229}
+	50%{background-color: #28C528}
+	75%{background-color: #9195E3}
+	100%{transform: rotate(90deg);}
+}
+/*---Фото коливається---*/
+.square_foto{
+	width: 200px;
+	height: 200px;
+	margin: 30px auto;
+	animation-name: spin1;
+	animation-duration: 4s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction:alternate;
+	float: left;
+}
+@keyframes spin1{
+	0%{transform: rotate(-50deg);}
+	100%{transform: rotate(-40deg);}
+}
+/*---Фламінго---*/
+.play__btn  img{
+position:absolute;
+top:52%;
+left:50%;
+transform: translate(-50%,-50%);
+opacity: 0.4;
+z-index: -5;
+border-radius: 10px;
+}
+.play__btn{
+cursor:pointer;
+}
+.play__btn-1 .pozn img{
+	z-index: 4;
+	opacity: 1;
+}
+.play__btn::before{
+	position: absolute;
+	content: "";
+	top:52%;
+	left: 50%;
+	width: 116px;
+	height: 116px;
+	background: rgba(162, 173, 255, 0.3);
+	border-radius: 50%;
+	transform: translate(-50%,-50%);
+	animation: play 1s ease-out  infinite;
+}
+.play__btn::after{
+	position: absolute;
+	content: "";
+	top:52%;
+	left: 50%;
+	width: 174px;
+	height:174px;
+	border: 1px solid rgba(162, 173, 255, 0.4);
+	border-radius: 50%;
+	transform: translate(-50%,-50%);
+	animation: wave 1s ease-out  infinite;
+}
+@keyframes wave{
+	from{
+	width: 174px;
+	height: 174px;
+	}
+	/*50%{	width: 274px;height: 274px;	}*/
+	to{
+	width: 274px;
+	height: 274px;
+	opacity: 0;
+	}
+}
+@keyframes play{
+	from{
+	width: 116px;
+	height: 116px;
+	}
+	/*50%{	width: 274px;height: 274px;	}*/
+	to{
+	width: 216px;
+	height: 216px;
+	opacity: 0;
+	}
+}
+/*---Квадрат перетворюється в круг---*/
+.one{
+	height: 300px;
+	width: 300px;
+	background: #44B664;
+	transition-duration: .5s;
+	transform: rotate(0);
+	margin: 50px;
+	position: absolute;
+	left:  70%;
+}
+.two{
+	width: 100px;
+	height: 100px;
+	background: grey;
+}
+.one:hover{
+	transform: rotate(90deg);
+	transition-duration: 1s;
+	background: blue;
+	border-radius: 50%;
+}
